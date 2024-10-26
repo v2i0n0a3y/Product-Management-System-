@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
-
 import 'displaydata.dart';
 
 class AddProduct extends StatefulWidget {
@@ -96,6 +95,7 @@ class _AddProductState extends State<AddProduct> {
   final TextEditingController datePickerController = TextEditingController();
   final TextEditingController priceController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
+
   String? selectedCategory;
   final List<String> categories = ['Furniture', 'Stationary', 'Electronics', 'Others'];
 
@@ -197,7 +197,7 @@ class _AddProductState extends State<AddProduct> {
                 SizedBox(
                   height: 50, width: 400,
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFD56C60)),
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
                     onPressed: _uploadData,
                     child: Text("Submit", style: GoogleFonts.beVietnamPro(
                       fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white,
@@ -213,7 +213,7 @@ class _AddProductState extends State<AddProduct> {
     );
   }
 
-  Widget _buildTextField({required TextEditingController controller, required String hint, required IconData icon, VoidCallback? onTap}) {
+  Widget _buildTextField({required TextEditingController controller, required String hint,required IconData icon, VoidCallback? onTap,}) {
     return SizedBox(
       height: 50, width: 400,
       child: TextField(

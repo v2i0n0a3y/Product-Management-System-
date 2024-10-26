@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'Vinay/upload.dart';
-import 'Vinay/upload_image_firebase.dart';
-import 'addproduct.dart';
+import 'package:products/addproduct.dart';
+import 'Vinay/profile.dart';
+import 'auth/auth.dart';
 import 'displaydata.dart';
 
 
@@ -42,10 +42,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
         useMaterial3: true,
       ),
-      home: AddProduct(),
+      home: AuthScreen(),
     );
   }
 }
+
+

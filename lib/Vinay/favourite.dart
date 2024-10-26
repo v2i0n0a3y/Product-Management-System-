@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../product_detail.dart';
-
 class FavoriteProductsScreen extends StatefulWidget {
   final Set<String> favoriteList; // Pass the favorite product IDs
 
@@ -54,76 +52,79 @@ class _FavoriteProductsScreenState extends State<FavoriteProductsScreen> {
         itemCount: favoriteProducts.length,
         itemBuilder: (context, index) {
           var item = favoriteProducts[index];
-          return Card(
-            shadowColor: Colors.black,
-            child: InkWell(
-              child: Container(
-                color: Colors.white.withOpacity(.2),
-                height: 120,
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                child: Row(
-                  children: [
-                    Card(
-                      shadowColor: Colors.black,
-                      child: Container(
-                        color: Colors.white,
-                        height: 100,
-                        width: 100,
-                        child: Image.network(item['imageUrl']),
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              shadowColor: Colors.black,
+              child: InkWell(
+                child: Container(
+                  color: Colors.white.withOpacity(.2),
+                  height: 120,
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  child: Row(
+                    children: [
+                      Card(
+                        shadowColor: Colors.black,
+                        child: Container(
+                          color: Colors.white,
+                          height: 100,
+                          width: 100,
+                          child: Image.network(item['imageUrl']),
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 30),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            item['productName'] ?? 'No description',
-                            style: GoogleFonts.beVietnamPro(
-                              textStyle: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            '₹ ${item['price'] ?? 'No price available'}',
-                            style: GoogleFonts.beVietnamPro(
-                              textStyle: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.blue,
+                      SizedBox(width: 30),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              item['productName'] ?? 'No description',
+                              style: GoogleFonts.beVietnamPro(
+                                textStyle: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                               ),
                             ),
-                          ),
-                          SizedBox(height: 8),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                item['category'] ?? 'No category available',
-                                style: GoogleFonts.beVietnamPro(
-                                  textStyle: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black.withOpacity(.6),
-                                  ),
+                            SizedBox(height: 5),
+                            Text(
+                              '₹ ${item['price'] ?? 'No price available'}',
+                              style: GoogleFonts.beVietnamPro(
+                                textStyle: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blue,
                                 ),
                               ),
-                              Text(
-                                item['date'] ?? 'No category available',
-                                style: GoogleFonts.beVietnamPro(
-                                  textStyle: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black.withOpacity(.6),
+                            ),
+                            SizedBox(height: 8),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  item['category'] ?? 'No category available',
+                                  style: GoogleFonts.beVietnamPro(
+                                    textStyle: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black.withOpacity(.6),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                                Text(
+                                  item['date'] ?? 'No category available',
+                                  style: GoogleFonts.beVietnamPro(
+                                    textStyle: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black.withOpacity(.6),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
