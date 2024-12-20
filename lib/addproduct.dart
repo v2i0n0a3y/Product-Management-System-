@@ -31,7 +31,8 @@ class _AddProductState extends State<AddProduct> {
         final imageBytes = await pickedFile.readAsBytes();
         setState(() {
           _imageBytes = imageBytes;
-        });
+        }
+        );
       }
     } else {
       print('No image selected.');
@@ -97,7 +98,7 @@ class _AddProductState extends State<AddProduct> {
   final TextEditingController descriptionController = TextEditingController();
 
   String? selectedCategory;
-  final List<String> categories = ['Furniture', 'Stationary', 'Electronics', 'Others'];
+  final List<String> categories = ['Furniture', 'Stationary', 'IOT Devices', 'Tools', 'Electronics', 'Others'];
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +120,7 @@ class _AddProductState extends State<AddProduct> {
                 _buildTextField(
                     controller: productNameController, hint: "Product Name", icon: Icons.production_quantity_limits),
                 const SizedBox(height: 20),
-                _buildTextField(controller: priceController, hint: "Price of Product", icon: Icons.money),
+                _buildTextField(controller: priceController, hint: "Price of Product", icon: Icons.currency_rupee),
                 const SizedBox(height: 20),
                 _buildTextField(controller: datePickerController, hint: "Select the date", icon: Icons.date_range,
                     onTap: () => onTapFunction(context: context)),
@@ -127,7 +128,7 @@ class _AddProductState extends State<AddProduct> {
                 DropdownButtonFormField<String>(
                   value: selectedCategory,
                   decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.category, color: Colors.black54),
+                    prefixIcon: const Icon(Icons.type_specimen, color: Colors.black54),
                     hintText: "Category",
                     filled: true,
                     fillColor: Colors.black.withOpacity(0.2),
@@ -212,6 +213,7 @@ class _AddProductState extends State<AddProduct> {
       ),
     );
   }
+
 
   Widget _buildTextField({required TextEditingController controller, required String hint,required IconData icon, VoidCallback? onTap,}) {
     return SizedBox(

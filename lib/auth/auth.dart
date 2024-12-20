@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:products/auth/service.dart';
+import 'package:products/category/navBar.dart';
 
 import '../displaydata.dart';
 
@@ -20,7 +21,11 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(_isLogin ? 'Login' : 'Register')),
+      appBar: AppBar(title: Text(_isLogin ? 'Login' : 'Register',style: GoogleFonts.beVietnamPro(
+          fontSize: 20,
+          fontWeight: FontWeight.w500,
+          color: Colors.black
+      ),)),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -126,7 +131,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         _passwordController.text,
                       );
                       if (user != null) {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => ProductsList()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => MainMenu()));
                         print("Login successful");
                       } else {
                         print("Login failed");

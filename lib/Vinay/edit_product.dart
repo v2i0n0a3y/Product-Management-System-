@@ -107,14 +107,14 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
               _buildIconTextField(
                 hint: "Product Name",
-                icon: Icons.pending_actions,
+                icon: Icons.add_shopping_cart,
                 initialValue: _productName.toString(),
                 onSaved: (value) => _productName = value!,
               ),
               const SizedBox(height: 20),
               _buildIconTextField(
                 hint: "Price",
-                icon: Icons.money,
+                icon: Icons.currency_rupee,
                 initialValue: _price.toString(),
                 onSaved: (value) => _price = value!,
               ),
@@ -140,7 +140,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                 onSaved: (value) => _category = value,
                 value: selectedCategory,
                 decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.category, color: Colors.black54),
+                  prefixIcon: const Icon(Icons.type_specimen_sharp, color: Colors.black54),
                   hintText: "Category",
                   filled: true,
                   fillColor: Colors.black.withOpacity(0.2),
