@@ -8,13 +8,13 @@ import 'Vinay/favourite.dart';
 import 'Vinay/profile.dart';
 import 'category/categoryData.dart';
 
+
 class ProductsList extends StatefulWidget {
   @override
   _ProductsListState createState() => _ProductsListState();
 }
 
 class _ProductsListState extends State<ProductsList> {
-
 
   User? user;
   List<DocumentSnapshot> productList = []; // Full list of products from Firebase
@@ -63,7 +63,6 @@ class _ProductsListState extends State<ProductsList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -118,7 +117,7 @@ class _ProductsListState extends State<ProductsList> {
             Divider(color: Colors.black.withOpacity(.2),),
             ListTile(
               leading: const Icon(Icons.person),
-              title: Text('Profile',   style: GoogleFonts.beVietnamPro(
+              title: Text('Profile', style: GoogleFonts.beVietnamPro(
                 textStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.black.withOpacity(.5)),
               ),),
               onTap: () {
@@ -186,7 +185,7 @@ class _ProductsListState extends State<ProductsList> {
                     itemCount: filteredProductList.length,
                     itemBuilder: (context, index) {
             var item = filteredProductList[index];
-            return Padding(
+              return Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
                 shadowColor: Colors.black,
@@ -280,7 +279,8 @@ class _ProductsListState extends State<ProductsList> {
                               } else {
                                 favoriteList.add(item.id);
                               }
-                            });
+                            }
+                            );
                           },
                         ),
                       ],

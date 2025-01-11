@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 class FavoriteProductsScreen extends StatefulWidget {
   final Set<String> favoriteList; // Pass the favorite product IDs
 
+
   FavoriteProductsScreen({required this.favoriteList});
 
   @override

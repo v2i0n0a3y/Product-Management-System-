@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:products/auth/service.dart';
 import 'package:products/category/navBar.dart';
-
 import '../displaydata.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -29,8 +28,8 @@ class _AuthScreenState extends State<AuthScreen> {
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
-          children: [
 
+          children: [
             Text("Welcome back!",
               textAlign: TextAlign.start,
               style: GoogleFonts.beVietnamPro(
